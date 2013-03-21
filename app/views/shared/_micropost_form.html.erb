@@ -1,7 +1,12 @@
-<%= form_for(@micropost) do |f| %>
+<%= form_for(@micropost, html: {class: 'form-horizontal'}) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
   	<%= f.text_area :content, placeholder: "Compose new micropost..." %>
+  </div>
+  
+  <label class="control-label" for="countdown">Characters Left:</label>
+  <div class="controls">
+  	<input type="text" id="countdown" disabled value="140">
   </div>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>
